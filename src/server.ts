@@ -19,4 +19,4 @@ app.get('/api/whoami', (req, res) => {
     }
     res.json(result);
 });
-app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT);

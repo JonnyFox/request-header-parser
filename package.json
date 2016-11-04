@@ -4,7 +4,8 @@
     "description": "",
     "main": "dist/server.js",
     "scripts": {
-        "start": "concurrently \"npm run nodemon\" \"npm run build.w\"",
+        "start": "node ./dist/server.js",
+        "dev": "concurrently \"npm run nodemon\" \"npm run build.w\"",
         "build": "tsc",
         "build.w": "tsc -w",
         "nodemon": "nodemon --watch dist dist/server.js"
