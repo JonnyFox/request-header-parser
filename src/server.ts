@@ -1,7 +1,7 @@
 import * as express from 'express';
 
 var app = express();
-app.get('/', (req, res) => {
+app.get('/api/whoami', (req, res) => {
     let software = req.header('user-agent');
     if (software) {
         software = /\((.+?)\)/.exec(software)[1];
