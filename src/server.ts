@@ -1,6 +1,9 @@
 import * as express from 'express';
 
 var app = express();
+app.get('/*', (req,res)=>{
+    res.redirect('/api/whoami');
+});
 app.get('/api/whoami', (req, res) => {
     let software = req.header('user-agent');
     if (software) {

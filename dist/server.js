@@ -1,6 +1,9 @@
 "use strict";
 var express = require('express');
 var app = express();
+app.get('/*', function (req, res) {
+    res.redirect('/api/whoami');
+});
 app.get('/api/whoami', function (req, res) {
     var software = req.header('user-agent');
     if (software) {
