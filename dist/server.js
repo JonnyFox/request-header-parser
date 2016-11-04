@@ -14,7 +14,9 @@ app.get('/api/whoami', function (req, res) {
         language = /\w{2}-\w{2}/.exec(language)[0];
     }
     var result = {
-        ipaddress: req.header('host'),
+        ipaddress: req.headers['x-forwarded-for'] ||
+            req.connection.remoteAddress ||
+            req.socket.remoteAddress,
         language: language,
         software: software
     };

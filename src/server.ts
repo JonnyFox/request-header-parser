@@ -1,7 +1,7 @@
 import * as express from 'express';
 
 var app = express();
-app.get('/*', (req,res)=>{
+app.get('/*', (req, res) => {
     res.redirect('/api/whoami');
 });
 app.get('/api/whoami', (req, res) => {
@@ -16,7 +16,9 @@ app.get('/api/whoami', (req, res) => {
     }
 
     let result = {
-        ipaddress: req.header('host'),
+        ipaddress: req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress,
         language: language,
         software: software
     }
