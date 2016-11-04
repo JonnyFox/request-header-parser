@@ -2,7 +2,7 @@
     "name": "request-header-parser",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/server.js",
     "scripts": {
         "start": "concurrently \"npm run nodemon\" \"npm run build.w\"",
         "build": "tsc",
