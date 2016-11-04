@@ -1,9 +1,6 @@
 "use strict";
 var express = require('express');
 var app = express();
-app.get('/*', function (req, res) {
-    res.redirect('/api/whoami');
-});
 app.get('/api/whoami', function (req, res) {
     var software = req.header('user-agent');
     if (software) {
@@ -21,6 +18,9 @@ app.get('/api/whoami', function (req, res) {
         software: software
     };
     res.json(result);
+});
+app.get('/*', function (req, res) {
+    res.redirect('/api/whoami');
 });
 app.listen(process.env.PORT);
 //# sourceMappingURL=server.js.map
