@@ -1,4 +1,9 @@
 import * as express from 'express';
+import * as path from 'path';
+import * as mongodb from 'mongodb';
+import { config } from './config';
+
+process = config(process);
 
 var app = express();
 app.get('/api/whoami', (req, res) => {
